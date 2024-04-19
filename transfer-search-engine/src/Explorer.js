@@ -23,6 +23,16 @@ const Explorer = ({ data }) => {
           {item.children.map(renderItem)}
         </ul>
       )}
+      {/* Render genes if present in the item */}
+    {item.genes && (
+      <ul className="nested-list">
+        {item.genes.map(gene => (
+          <li key={gene} className="gene-item">
+            <i className="fa fa-dna"></i> {gene}
+          </li>
+        ))}
+      </ul>
+    )}
     </div>
   );
 
